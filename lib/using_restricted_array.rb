@@ -103,12 +103,14 @@ def binary_search(array, length, value_to_find)
       return true
     elsif array[mid.floor] > value_to_find
       high_point = mid - 1
-    elsif low_point = mid + 1
+    else
+      low_point = mid + 1
     end
   end
   if low_point < high_point
     return false
   end
+  #After the while low_point < high_point, there is a case where low_point is equal to high_point and we need an additional if statement below to check whether the value at highpoint -lowpoint and hightpoint are the same index at this point) is equal to the value_to_find
   if array[low_point] == value_to_find
     return true
   else
